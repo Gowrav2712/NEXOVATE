@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXOVATE 2026 | HUD Interface</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- FIXED BACKGROUND ELEMENTS -->
+    <div class="fixed-bg">
+        <div class="scanlines"></div>
+        <div class="noise"></div>
+        <div class="core-rings">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+        </div>
+        <!-- CORE IMAGE MOVED TO FIXED BG -->
+        <div class="main-core">
+            <img src="assets/hud_core.png" alt="HUD Core">
+        </div>
+    </div>
+    
+    <header class="hud-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link"><span class="logo-text">NEXOVATE</span></a>
+            </div>
+            <nav class="nav-links">
+                <a href="#technical">Events</a>
+                <a href="#hackathon">Hackathon</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="nav-register-btn-main">REGISTER</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="hud-scroller">
+        <!-- SECTION 1: HOME -->
+        <section id="home" class="hud-section home-hero">
+            <div class="college-header-strip">
+                <img src="assets/college_banner-removebg-preview.png" alt="PESCE College Banner" class="college-banner-img">
+            </div>
+            <div class="hero-content">
+                <p class="hero-label">INTERCOLLEGIATE NATIONAL LEVEL TECHNICAL FEST</p>
+                <h1 class="hero-main-title">NEXOVATE <span class="year">2026</span></h1>
+                <p class="hero-date">MAY 22-23, 2026</p>
+                <div class="sponsor-logos-strip">
+                    <div class="sponsor-logos-container">
+                        <p class="powered-by-text">POWERED BY</p>
+                        <img src="assets/sponsor_logos-removebg-preview.png" alt="Sponsor Logos" class="sponsor-logos-img">
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">SCROLL_TO_EXPLORE ↓</div>
+        </section>
+
+        <section id="overview" class="hud-section">
+            <div class="section-label-watermark">OVERVIEW</div>
+            <div class="overview-dual-column">
+                <div class="stats-column">
+                    <div class="stat-box">
+                        <div class="stat-value">₹2,20,000</div>
+                        <div class="stat-label">GRAND PRIZE POOL</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">02</div>
+                        <div class="stat-label">DAYS</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">10+</div>
+                        <div class="stat-label">EVENTS</div>
+                    </div>
+                </div>
+                
+                <div class="countdown-column">
+                    <div class="countdown-box">
+                        <div id="days" class="stat-value">00</div>
+                        <div class="stat-label">DAYS_LEFT</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div id="hours" class="stat-value">00</div>
+                        <div class="stat-label">HOURS</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div id="minutes" class="stat-value">00</div>
+                        <div class="stat-label">MINS</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div id="seconds" class="stat-value">00</div>
+                        <div class="stat-label">SECS</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: TECHNICAL -->
+        <section id="technical" class="hud-section">
+            <div class="section-label-watermark">TECHNICAL</div>
+            <div class="section-content">
+                <div class="panel-group left">
+                    <a href="robo-race.html" class="event-panel-link">
+                        <div class="event-panel">
+                            <div class="panel-header">ROBO RACE</div>
+                            <div class="panel-content">Speed challenges, turns & obstacles.</div>
+                            <div class="panel-prize">PRIZE_POOL: ₹30,000</div>
+                            <div class="panel-footer">TEAM: 2-4 // LEAD: HITESH KM, TEJAS G</div>
+                        </div>
+                    </a>
+                    <a href="maze-solver.html" class="event-panel-link">
+                        <div class="event-panel">
+                            <div class="panel-header">MAZE SOLVER</div>
+                            <div class="panel-content">Navigate through a complex maze.</div>
+                            <div class="panel-prize">PRIZE_POOL: ₹20,000</div>
+                            <div class="panel-footer">TEAM: 1-2 // LEAD: MANOJ</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="panel-group middle">
+                    <a href="robo-soccer.html" class="event-panel-link">
+                        <div class="event-panel">
+                            <div class="panel-header">ROBO SOCCER</div>
+                            <div class="panel-content">Teamwork, control & scoring goals.</div>
+                            <div class="panel-prize">PRIZE_POOL: ₹30,000</div>
+                            <div class="panel-footer">TEAM: 2-4 // LEAD: YASHAS P</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="panel-group right">
+                    <a href="robo-sumo.html" class="event-panel-link">
+                        <div class="event-panel">
+                            <div class="panel-header">ROBO SUMO</div>
+                            <div class="panel-content">Traction, torque & zone dominance.</div>
+                            <div class="panel-prize">PRIZE_POOL: ₹30,000</div>
+                            <div class="panel-footer">TEAM: 2-4 // LEAD: PARAMESH HN, JAYANTH</div>
+                        </div>
+                    </a>
+                    <a href="line-follower.html" class="event-panel-link">
+                        <div class="event-panel">
+                            <div class="panel-header">LINE FOLLOWER</div>
+                            <div class="panel-content">Autonomous path detection.</div>
+                            <div class="panel-prize">PRIZE_POOL: ₹20,000</div>
+                            <div class="panel-footer">TEAM: 2-4 // LEAD: CHIRANTH</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: NON-TECHNICAL -->
+        <section id="non-technical" class="hud-section">
+            <div class="section-label-watermark">NON TECHNICAL</div>
+            <div class="section-content">
+                <div class="panel-group left">
+                    <a href="brand-rumbling.html" class="event-panel-link">
+                        <div class="event-panel">
+                            <div class="panel-header">BRAND RUMBLING</div>
+                            <div class="panel-content">Identity, UI/UX & Advertising.</div>
+                            <div class="panel-prize">PRIZE_POOL: ₹10,000</div>
+                            <div class="panel-footer">TEAM: 2-4 // LEAD: KISHAN S</div>
+                        </div>
+                    </a>
+                    <a href="shark-tank.html" class="event-panel-link">
+                        <div class="event-panel">
+                            <div class="panel-header">SHARK TANK</div>
+                            <div class="panel-content">Startup pitches & funding simulation.</div>
+                            <div class="panel-prize">PRIZE_POOL: ₹10,000</div>
+                            <div class="panel-footer">TEAM: 1-4 // LEAD: SAROJ</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="panel-group right">
+                    <a href="iq-wars.html" class="event-panel-link">
+                        <div class="event-panel">
+                            <div class="panel-header">IQ WARS 2.0</div>
+                            <div class="panel-content">Reasoning, quizzes & rapid-fire.</div>
+                            <div class="panel-prize">PRIZE_POOL: ₹10,000</div>
+                            <div class="panel-footer">TEAM: 1-2 // LEAD: KUNAL MK, AISHWARYA S</div>
+                        </div>
+                    </a>
+                    <a href="water-rocket.html" class="event-panel-link">
+                        <div class="event-panel">
+                            <div class="panel-header">WATER ROCKET</div>
+                            <div class="panel-content">Aerodynamics & pressure mechanics.</div>
+                            <div class="panel-prize">PRIZE_POOL: ₹10,000</div>
+                            <div class="panel-footer">TEAM: 2-4 // LEAD: P HARSHIT</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: HACKSPRINT -->
+        <section id="hackathon" class="hud-section">
+            <div class="section-label-watermark">HACKSPRINT 6.0</div>
+            <div class="hacksprint-container">
+                <div class="hacksprint-link">
+                    <div class="hacksprint-panel-large">
+                        <div class="hacksprint-body">
+                            <div class="domain-tags">
+                                <span class="tag">ARTIFICIAL INTELLIGENCE</span>
+                                <span class="tag">AGRITECH / HEALTHTECH</span>
+                                <span class="tag">INTERNET OF THINGS</span>
+                            </div>
+                            <p>An intensive, multi-domain hackathon where student teams develop innovative solutions across cutting-edge fields.</p>
+                            <div class="panel-prize hacksprint-prize">PRIZE_POOL: ₹60,000</div>
+                            <div style="margin-top: 40px;">
+                                <a href="#" class="register-btn">REGISTER FOR HACKSPRINT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="hud-footer">
+        <div class="footer-stats">
+            <span id="cpu-load">CPU_LOAD: 42%</span>
+            <span>UPLINK: ACTIVE</span>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

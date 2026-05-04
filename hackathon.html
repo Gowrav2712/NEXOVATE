@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details | NEXOVATE 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Styles for Event Details Page */
+        .event-details-body {
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        .details-hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 5% 60px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .details-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(2, 6, 16, 0.4), var(--bg-dark));
+            z-index: 1;
+        }
+
+        .details-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+        }
+
+        .info-panel {
+            background: rgba(0, 20, 40, 0.4);
+            border: 1px solid var(--neon-blue-glow);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .event-cat {
+            font-family: var(--font-mono);
+            color: var(--neon-blue);
+            letter-spacing: 5px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .event-title-large {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            line-height: 0.9;
+            text-transform: uppercase;
+        }
+
+        .event-desc {
+            font-family: var(--font-mono);
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .prize-banner {
+            background: var(--neon-blue);
+            color: black;
+            padding: 15px 30px;
+            display: inline-block;
+            font-weight: 900;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
+        }
+
+        .action-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .rules-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .side-block h4 {
+            font-size: 1.2rem;
+            color: var(--neon-blue);
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--neon-blue-glow);
+            padding-bottom: 5px;
+        }
+
+        .rules-list {
+            list-style: none;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .rules-list li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .rules-list li::before {
+            content: ">>";
+            position: absolute;
+            left: 0;
+            color: var(--neon-blue);
+        }
+
+        .contact-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info .name { font-weight: 700; color: white; }
+        .contact-info .phone { font-family: var(--font-mono); color: var(--neon-blue); font-size: 0.9rem; }
+
+        .call-btn {
+            background: var(--neon-blue-glow);
+            color: var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .call-btn:hover { background: var(--neon-blue); color: black; }
+
+        .back-btn {
+            position: fixed;
+            top: 100px;
+            left: 5%;
+            z-index: 100;
+            background: rgba(181, 0, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            padding: 8px 20px;
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .back-btn:hover { 
+            background: var(--neon-blue);
+            color: black;
+            box-shadow: 0 0 15px var(--neon-blue-glow);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 900px) {
+            .details-content { grid-template-columns: 1fr; }
+            .event-title-large { font-size: 2.5rem; }
+            .back-btn { top: 90px; }
+        }
+    </style>
+</head>
+<body class="event-details-body">
+    <!-- FIXED BACKGROUND ELEMENTS (Same as index) -->
+    <div class="fixed-bg">
+        <div class="scanlines"></div>
+        <div class="noise"></div>
+    </div>
+
+    <header class="hud-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link"><span class="logo-text">NEXOVATE</span></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#technical">Events</a>
+                <a href="index.html#hackathon">Hackathon</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <a href="index.html" class="back-btn">← BACK</a>
+
+    <main id="event-page-content">
+        <section class="details-hero" id="event-hero">
+            <div class="details-overlay"></div>
+            <div class="details-content">
+                <div class="info-panel">
+                    <p class="event-cat" id="event-category">CATEGORY</p>
+                    <h1 class="event-title-large" id="event-title">EVENT_NAME</h1>
+                    <div class="prize-banner" id="event-prize">PRIZE_POOL: ₹00,000</div>
+                    <p class="event-desc" id="event-description">Initializing event protocol... Please wait for synchronization.</p>
+                    
+                    <div class="action-btns">
+                        <button class="btn-outline" onclick="alert('Downloading Rule Book...')">RULE BOOK</button>
+                        <a href="#" class="btn-outline">REGISTER</a>
+                    </div>
+                </div>
+
+                <div class="rules-panel">
+                    <div class="info-panel side-block">
+                        <h4>RULES & GUIDELINES</h4>
+                        <ul class="rules-list" id="event-rules">
+                            <li>Loading rules from core system...</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-panel side-block">
+                        <h4>EVENT COORDINATORS</h4>
+                        <div id="event-contacts">
+                            <!-- Contacts will be injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="hud-footer">
+        <div class="footer-stats">
+            <span id="cpu-load">CPU_LOAD: 42%</span>
+            <span>UPLINK: ACTIVE</span>
+        </div>
+    </footer>
+
+    <script>
+        const eventsData = {
+            "robo-race": {
+                title: "ROBO RACE",
+                category: "TECHNICAL",
+                prize: "₹30,000",
+                description: "An adrenaline-pumping event where participants must build a robot capable of navigating a complex track filled with sharp turns, steep inclines, and challenging obstacles in the shortest time possible.",
+                rules: [
+                    "The robot must fit within the specified dimensions (30cm x 30cm).",
+                    "Wired or wireless control is allowed.",
+                    "Maximum voltage should not exceed 12V.",
+                    "The course must be completed in order; skipping obstacles results in time penalties.",
+                    "Two trials will be provided; the best time will be considered."
+                ],
+                coordinators: [
+                    { name: "Hitesh K M", phone: "8904902088" },
+                    { name: "Tejas Gowda", phone: "7337752956" }
+                ],
+                image: "assets/robo_race.png"
+            },
+            "robo-soccer": {
+                title: "ROBO SOCCER",
+                category: "TECHNICAL",
+                prize: "₹30,000",
+                description: "A thrilling battle of strategy and control! Teams face off in a miniature soccer arena where their robots must outmaneuver opponents to score goals within a set time limit.",
+                rules: [
+                    "Robots must be within 30cm x 30cm dimensions.",
+                    "Matches consist of two halves of 3 minutes each.",
+                    "Touching the robot during a match is not allowed unless permitted by the referee.",
+                    "Fair play is mandatory; any damage to the arena or opponent may lead to disqualification."
+                ],
+                coordinators: [
+                    { name: "Yashas P", phone: "9901793968" },
+                    { name: "Ubair", phone: "6360541947" }
+                ],
+                image: "assets/robo_soccer.png"
+            },
+            "robo-sumo": {
+                title: "ROBO SUMO",
+                category: "TECHNICAL",
+                prize: "₹20,000",
+                description: "Traction, torque, and sheer power! Two robots enter the 'Dohyo' (ring), and the goal is simple: push your opponent out of the circle to claim victory.",
+                rules: [
+                    "Weight limit: Max 5kg.",
+                    "Size limit: 30cm x 30cm (no height limit).",
+                    "The robot must start moving only after a 5-second delay from the start signal.",
+                    "No weapons or liquids allowed; only pushing and traction mechanisms."
+                ],
+                coordinators: [
+                    { name: "Paramesh H N", phone: "9448176290" }
+                ],
+                image: "assets/robo_race.png"
+            },
+            "line-follower": {
+                title: "LINE FOLLOWER",
+                category: "TECHNICAL",
+                prize: "₹20,000",
+                description: "The ultimate test of autonomous navigation. Program your robot to follow a black line on a white background with precision and speed, tackling loops and intersections along the way.",
+                rules: [
+                    "The robot must be fully autonomous.",
+                    "Width of the line is 2.5cm-3cm.",
+                    "The robot must not damage the arena.",
+                    "Fastest completion time wins."
+                ],
+                coordinators: [
+                    { name: "Chiranth", phone: "9448176290" }
+                ],
+                image: "assets/robo_race.png"
+            },
+            "maze": {
+                title: "MAZE",
+                category: "TECHNICAL",
+                prize: "₹20,000",
+                description: "A remotely controlled or autonomous vehicle must find its way through a complex, walled maze. Precision and memory are key to reaching the finish line first.",
+                rules: [
+                    "The robot must navigate from start to finish without touching walls excessively.",
+                    "Autonomous and manual modes are judged separately.",
+                    "Time limits apply for each run."
+                ],
+                coordinators: [
+                    { name: "Deeksha G Y", phone: "9353415303" },
+                    { name: "Manoj", phone: "9035052726" }
+                ],
+                image: "assets/robo_race.png"
+            },
+            "brand-rumbling": {
+                title: "RAPID BRAND RUMBLING",
+                category: "NON-TECHNICAL",
+                prize: "₹10,000",
+                description: "A fast-paced branding and design competition. Create logos, UI/UX layouts, and advertising strategies for a given product or service within a strict time limit.",
+                rules: [
+                    "Participants must bring their own laptops with necessary software.",
+                    "Internet access is permitted for research only.",
+                    "Submissions must be original work."
+                ],
+                coordinators: [
+                    { name: "Kishan S", phone: "8296557523" }
+                ],
+                image: "assets/hackathon.png"
+            },
+            "shark-tank": {
+                title: "SHARK TANK",
+                category: "NON-TECHNICAL",
+                prize: "₹50,000",
+                description: "Pitch your startup idea to a panel of 'Sharks'. This event tests your business acumen, market research, and ability to sell a vision for the future.",
+                rules: [
+                    "Pitch deck must be prepared in advance (max 10 slides).",
+                    "Presentation time: 5 minutes, Q&A: 5 minutes.",
+                    "Team size: 1-4 members."
+                ],
+                coordinators: [
+                    { name: "Saroj", phone: "8873250798" }
+                ],
+                image: "assets/hackathon.png"
+            },
+            "iq-wars": {
+                title: "IQ WARS 2.0",
+                category: "NON-TECHNICAL",
+                prize: "₹10,000",
+                description: "A multi-round quiz competition spanning science, technology, general knowledge, and logic. Only the sharpest minds will survive the final rapid-fire round.",
+                rules: [
+                    "Preliminary round: Written quiz.",
+                    "Final round: Live buzzers.",
+                    "Team size: 1-2 members."
+                ],
+                coordinators: [
+                    { name: "Kunal M K", phone: "7795687774" },
+                    { name: "Aishwarya S", phone: "7411260022" }
+                ],
+                image: "assets/hackathon.png"
+            },
+            "water-rocket": {
+                title: "WATER ROCKET",
+                category: "NON-TECHNICAL",
+                prize: "₹10,000",
+                description: "Aerodynamics meets pressure. Build and launch a water-powered rocket, aiming for maximum range and accuracy. Physics in its most fun form!",
+                rules: [
+                    "Rocket body must be made from a plastic bottle.",
+                    "Propulsion is purely water and air pressure.",
+                    "Launcher will be provided, or participants can bring their own."
+                ],
+                coordinators: [
+                    { name: "P Harshit Rao", phone: "9933806575" }
+                ],
+                image: "assets/robo_race.png"
+            },
+            "hackathon": {
+                title: "HACKSPRINT 6.0",
+                category: "HACKATHON",
+                prize: "₹60,000",
+                description: "HACKSPRINT 6.0 is an intensive, multi-domain hackathon where student teams develop innovative solutions across cutting-edge fields like Artificial Intelligence, AgriTech, HealthTech, and the Internet of Things. The event challenges participants to submit and prototype original ideas to solve self-chosen problem statements, fostering technical creativity and practical engineering skills.",
+                rules: [
+                    "Team size: 3-4 members.",
+                    "Development must happen within the 24-hour window.",
+                    "Code must be pushed to a Git repository.",
+                    "Final presentation involves a demo."
+                ],
+                coordinators: [
+                    { name: "Sonal H", phone: "9591787616" },
+                    { name: "Ashwin S", phone: "8951728170" }
+                ],
+                image: "assets/hackathon.png"
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            let eventId = params.get('id');
+
+            console.log("EVENT_ID:", eventId);
+
+            if (!eventId || !eventsData[eventId]) {
+                console.warn("NO EVENT ID FOUND, DEFAULTING TO HACKATHON FOR TESTING...");
+                eventId = 'hackathon';
+            }
+
+            const data = eventsData[eventId];
+
+            // Inject Content
+            document.title = `${data.title} | NEXOVATE 2026`;
+            document.getElementById('event-title').textContent = data.title;
+            document.getElementById('event-category').textContent = data.category;
+            document.getElementById('event-prize').textContent = `PRIZE_POOL: ${data.prize}`;
+            document.getElementById('event-description').textContent = data.description;
+
+            // Set Background
+            const hero = document.getElementById('event-hero');
+            hero.style.backgroundImage = `url('${data.image}')`;
+
+            // Inject Rules
+            const rulesList = document.getElementById('event-rules');
+            rulesList.innerHTML = '';
+            data.rules.forEach(rule => {
+                const li = document.createElement('li');
+                li.textContent = rule;
+                rulesList.appendChild(li);
+            });
+
+            // Inject Contacts
+            const contactsDiv = document.getElementById('event-contacts');
+            contactsDiv.innerHTML = '';
+            data.coordinators.forEach(coord => {
+                const card = document.createElement('div');
+                card.className = 'contact-card';
+                card.innerHTML = `
+                    <div class="contact-info">
+                        <div class="name">${coord.name}</div>
+                        <div class="phone">${coord.phone}</div>
+                    </div>
+                    <a href="tel:${coord.phone}" class="call-btn">CALL</a>
+                `;
+                contactsDiv.appendChild(card);
+            });
+
+            // CPU Load Animation
+            const cpuLoad = document.getElementById('cpu-load');
+            setInterval(() => {
+                const load = Math.floor(Math.random() * 20) + 30;
+                if (cpuLoad) cpuLoad.textContent = `CPU_LOAD: ${load}%`;
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
