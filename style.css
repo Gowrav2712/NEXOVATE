@@ -59,6 +59,8 @@ body {
     position: relative;
     width: 500px;
     height: 500px;
+    max-width: 90vw; /* Added for mobile */
+    max-height: 90vw; /* Added for mobile */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -351,9 +353,24 @@ body {
 }
 
 .college-banner-img {
-    max-width: 80%; /* Decreased size by 10% */
+    max-width: 80%;
     height: auto;
-    /* mix-blend-mode removed since PNG is natively transparent */
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    .college-banner-img {
+        max-width: 100%; /* Spans full width */
+        width: 100%;
+        height: auto;
+        padding: 0 5px;
+        margin-top: 10px;
+    }
+    
+    .college-header-strip {
+        top: 0; /* Align to top */
+        padding: 5px 0;
+    }
 }
 
 .hero-actions {
@@ -409,25 +426,41 @@ body {
     animation: bounce 2s infinite;
 }
 
-/* SECTION TITLES (HIGHLIGHTED) */
 .section-label-watermark {
     position: absolute;
-    top: 10%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    font-size: 2.5rem;
+    transform: translate(-50%, -50%);
+    font-size: 15vw;
     font-weight: 900;
     color: var(--neon-blue);
-    text-shadow: 0 0 15px var(--neon-blue-glow);
-    letter-spacing: 15px;
-    text-transform: uppercase;
+    opacity: 0.08;
     white-space: nowrap;
+    z-index: 1;
+    pointer-events: none;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.section-heading-visible {
+    position: relative;
     z-index: 50;
-    padding: 10px 40px;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px var(--neon-blue-glow), 0 0 30px var(--neon-blue);
+    padding: 15px 30px;
     border: 2px solid var(--neon-blue);
-    background: rgba(0, 20, 40, 0.8);
-    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
-    animation: title-glow 2s infinite ease-in-out;
+    background: rgba(0, 5, 15, 0.85);
+    clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    animation: title-glow 3s infinite ease-in-out;
 }
 
 @keyframes title-glow {
@@ -631,11 +664,36 @@ body {
         font-size: 3.5rem;
     }
     .section-label-watermark {
-        font-size: 18vw;
-        opacity: 0.12;
-        letter-spacing: 5px;
-        top: 30%; /* Move up slightly on mobile to avoid being covered by panels */
+        display: none !important; /* Force hide watermark on mobile */
     }
+    
+    .section-heading-visible {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+        width: 95%;
+        max-width: 400px;
+        margin: 20px auto 30px auto;
+        padding: 15px;
+        z-index: 100;
+    }
+
+    .hud-section {
+        padding: 20px 10px;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: auto;
+        min-height: calc(100vh - 80px);
+    }
+
+    .section-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
     .hacksprint-panel-large {
         padding: 30px 15px;
         clip-path: none;
