@@ -100,7 +100,7 @@ const eventsData = {
             { name: "Kishan S", phone: "8296557523" }
         ],
         image: "assets/hackathon.png",
-        rulebook: "assets/brand%20rumbling.pdf"
+        rulebook: "assets/robo%20brand%20rumble.pdf"
     },
     "shark-tank": {
         title: "SHARK TANK",
