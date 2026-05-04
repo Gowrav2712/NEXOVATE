@@ -538,6 +538,10 @@ body {
     color: #eee;
 }
 
+.hacksprint-btn-container {
+    margin-top: 40px;
+}
+
 .register-btn {
     background: transparent;
     border: 2px solid var(--neon-blue);
