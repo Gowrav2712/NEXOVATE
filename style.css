@@ -636,6 +636,63 @@ body {
     .hero-label { font-size: 0.8rem; letter-spacing: 2px; }
     .hacksprint-prize { font-size: 1.2rem; }
     .register-btn { width: 100%; padding: 12px 20px; }
+    .social-btn { width: 50px; height: 50px; }
+    .social-btns { gap: 20px; }
+}
+
+/* CONNECT SECTION */
+.connect-section {
+    min-height: 40vh !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.connect-container {
+    text-align: center;
+    z-index: 10;
+}
+
+.connect-title {
+    font-family: var(--font-main);
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    color: var(--neon-blue);
+}
+
+.social-btns {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.social-btn {
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--neon-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--neon-blue);
+    font-family: var(--font-mono);
+    font-weight: bold;
+    transition: all 0.3s;
+    background: rgba(0, 163, 255, 0.05);
+}
+
+.social-btn:hover {
+    background: var(--neon-blue);
+    color: black;
+    box-shadow: 0 0 20px var(--neon-blue-glow);
+    transform: translateY(-5px);
+}
+
+.social-icon {
+    font-size: 1.2rem;
 }
 
 /* EVENT STATS SECTION */
