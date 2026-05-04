@@ -1,6 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('HUD_SYSTEM_INITIALIZED');
 
+    // Mobile Menu Toggle
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links a');
+
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+
     // Status updates
     const cpuLoad = document.getElementById('cpu-load');
     setInterval(() => {
