@@ -599,9 +599,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
     .mobile-menu-btn {
         display: flex;
     }
@@ -674,6 +671,7 @@ body {
         height: 100vh;
         background: rgba(2, 6, 16, 0.98);
         backdrop-filter: blur(25px);
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
