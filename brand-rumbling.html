@@ -236,7 +236,7 @@
                     <p class="event-desc" id="event-description">Initializing event protocol... Please wait for synchronization.</p>
                     
                     <div class="action-btns">
-                        <button class="btn-outline" onclick="alert('Downloading Rule Book...')">RULE BOOK</button>
+                        <a id="rulebook-link" class="btn-outline">RULE BOOK</a>
                         <a href="#" class="btn-outline">REGISTER</a>
                     </div>
                 </div>
@@ -365,7 +365,8 @@
                 coordinators: [
                     { name: "Kishan S", phone: "8296557523" }
                 ],
-                image: "assets/hackathon.png"
+                image: "assets/hackathon.png",
+                rulebook: "assets/brand rumbling.pdf"
             },
             "shark-tank": {
                 title: "SHARK TANK",
@@ -380,7 +381,8 @@
                 coordinators: [
                     { name: "Saroj", phone: "8873250798" }
                 ],
-                image: "assets/hackathon.png"
+                image: "assets/hackathon.png",
+                rulebook: "assets/NEXOVATE - SHARK TANK RULEBOOK.pdf"
             },
             "iq-wars": {
                 title: "IQ WARS 2.0",
@@ -455,6 +457,16 @@
             // Set Background
             const hero = document.getElementById('event-hero');
             hero.style.backgroundImage = `url('${data.image}')`;
+
+            // Rulebook Link
+            const rulebookLink = document.getElementById('rulebook-link');
+            if (data.rulebook) {
+                rulebookLink.href = data.rulebook;
+                rulebookLink.target = "_blank";
+                rulebookLink.style.display = 'inline-block';
+            } else {
+                rulebookLink.style.display = 'none';
+            }
 
             // Inject Rules
             const rulesList = document.getElementById('event-rules');

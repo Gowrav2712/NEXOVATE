@@ -99,7 +99,8 @@ const eventsData = {
         coordinators: [
             { name: "Kishan S", phone: "8296557523" }
         ],
-        image: "assets/hackathon.png"
+        image: "assets/hackathon.png",
+        rulebook: "assets/brand rumbling.pdf"
     },
     "shark-tank": {
         title: "SHARK TANK",
@@ -114,7 +115,8 @@ const eventsData = {
         coordinators: [
             { name: "Saroj", phone: "8873250798" }
         ],
-        image: "assets/hackathon.png"
+        image: "assets/hackathon.png",
+        rulebook: "assets/NEXOVATE - SHARK TANK RULEBOOK.pdf"
     },
     "iq-wars": {
         title: "IQ WARS 2.0",
