@@ -368,7 +368,7 @@ body {
     }
     
     .college-header-strip {
-        top: 0; /* Align to top */
+        top: 10px; /* Restored visibility */
         padding: 5px 0;
     }
 }
