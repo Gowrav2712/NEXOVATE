@@ -21,7 +21,7 @@ const eventsData = {
     "robo-soccer": {
         title: "ROBO SOCCER",
         category: "TECHNICAL",
-        prize: "₹25,000",
+        prize: "₹30,000",
         description: "A thrilling battle of strategy and control! Teams face off in a miniature soccer arena where their robots must outmaneuver opponents to score goals within a set time limit.",
         rules: [
             "Robots must be within 30cm x 30cm dimensions.",
@@ -34,12 +34,13 @@ const eventsData = {
             { name: "Ubair", phone: "6360541947" }
         ],
         image: "assets/robo_soccer.png",
-        rulebook: "assets/robo Soccer rule book.pdf"
+        rulebook: "assets/robo Soccer rule book.pdf",
+        registrationUrl: "https://snapmeet.co.in/event/robo-soccer-177/"
     },
     "robo-sumo": {
         title: "ROBO SUMO",
         category: "TECHNICAL",
-        prize: "₹25,000",
+        prize: "₹20,000",
         description: "Traction, torque, and sheer power! Two robots enter the 'Dohyo' (ring), and the goal is simple: push your opponent out of the circle to claim victory.",
         rules: [
             "Weight limit: Max 5kg.",
