@@ -206,7 +206,8 @@ body {
 .hud-scroller {
     flex: 1;
     overflow-y: auto;
-    scroll-snap-type: y proximity; /* Changed from mandatory for smoother free-scroll transitions */
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
     z-index: 10;
     margin-top: 80px;
 }
