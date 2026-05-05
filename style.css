@@ -206,7 +206,7 @@ body {
 .hud-scroller {
     flex: 1;
     overflow-y: auto;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity; /* Changed from mandatory for smoother free-scroll transitions */
     z-index: 10;
     margin-top: 80px;
 }
@@ -221,9 +221,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    scroll-snap-align: start;
+    scroll-snap-align: none; /* Disabled by default for free scroll */
     position: relative;
     padding: 40px;
+}
+
+#home, #overview {
+    scroll-snap-align: start; /* Enable snap only for first 2 pages */
 }
 
 .section-label-watermark {
