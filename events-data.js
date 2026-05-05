@@ -13,7 +13,7 @@ const eventsData = {
         ],
         coordinators: [
             { name: "Hitesh K M", phone: "8904902088" },
-            { name: "Tejas Gowda", phone: "7337752956" }
+            { name: "Madu Kumar S", phone: "6366994655" }
         ],
         image: "assets/robo_race.png",
         rulebook: "assets/robo race rule book.pdf",
@@ -51,7 +51,7 @@ const eventsData = {
         ],
         coordinators: [
             { name: "Paramesh H N", phone: "9448176290" },
-            { name: "Jayanth", phone: "767662708" }
+            { name: "Gowreesh N", phone: "9448176290" }
         ],
         image: "assets/robo_race.png",
         rulebook: "assets/robo sumo rule book.pdf",
@@ -102,7 +102,8 @@ const eventsData = {
             "Submissions must be original work."
         ],
         coordinators: [
-            { name: "Kishan S", phone: "8296557523" }
+            { name: "Kishan S", phone: "8296557523" },
+            { name: "Mohammed Faizan", phone: "9035458816" }
         ],
         image: "assets/hackathon.png",
         rulebook: "assets/robo brand rumble.pdf",
@@ -119,7 +120,8 @@ const eventsData = {
             "Team size: 1-4 members."
         ],
         coordinators: [
-            { name: "Saroj", phone: "8873250798" }
+            { name: "Saroj", phone: "8873250798" },
+            { name: "MN Yoghanandhan", phone: "9390771258" }
         ],
         image: "assets/hackathon.png",
         rulebook: "assets/NEXOVATE - SHARK TANK RULEBOOK.pdf",
@@ -152,17 +154,18 @@ const eventsData = {
             "Launcher will be provided, or participants can bring their own."
         ],
         coordinators: [
-            { name: "P Harshit Rao", phone: "9933806575" }
+            { name: "P Harshit Rao", phone: "9933806575" },
+            { name: "Sathwik", phone: "9606369472" }
         ],
         image: "assets/robo_race.png",
         rulebook: "assets/robo water rocket.pdf",
         registrationUrl: "https://snapmeet.co.in/event/hydro-blast-184/"
     },
     "hackathon": {
-        title: "HACKSPRINT 6.0",
+        title: "HACKSPIRIT 6.0",
         category: "HACKATHON",
         prize: "₹60,000",
-        description: "HACKSPRINT 6.0 is an intensive, multi-domain hackathon where student teams develop innovative solutions across cutting-edge fields like Artificial Intelligence, AgriTech, HealthTech, and the Internet of Things. The event challenges participants to submit and prototype original ideas to solve self-chosen problem statements, fostering technical creativity and practical engineering skills.",
+        description: "HACKSPIRIT 6.0 is an intensive, multi-domain hackathon where student teams develop innovative solutions across cutting-edge fields like Artificial Intelligence, AgriTech, and the Internet of Things. The event challenges participants to submit and prototype original ideas to solve self-chosen problem statements, fostering technical creativity and practical engineering skills.",
         rules: [
             "Team size: 3-4 members.",
             "Development must happen within the 24-hour window.",

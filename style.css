@@ -337,11 +337,25 @@ body {
     text-transform: uppercase;
 }
 
+.logos-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.department-logo-img {
+    height: 70px;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+    mix-blend-mode: screen; /* Handles non-transparent backgrounds */
+}
+
 .sponsor-logos-img {
-    max-width: 70%; /* Decreased size */
-    height: auto;
+    height: 80px;
+    width: auto;
     filter: drop-shadow(0 0 10px rgba(181, 0, 255, 0.3));
-    /* mix-blend-mode removed since PNG is natively transparent */
 }
 
 /* COLLEGE HEADER STRIP — top of hero */
@@ -551,13 +565,13 @@ body {
 
 .panel-footer { font-size: 0.75rem; font-family: var(--font-mono); color: var(--neon-blue); opacity: 0.8; }
 
-/* HACKSPRINT */
-.hacksprint-container {
+/* hackspirit */
+.hackspirit-container {
     width: 100%;
     max-width: 900px;
 }
 
-.hacksprint-panel-large {
+.hackspirit-panel-large {
     background: rgba(0, 10, 20, 0.85);
     border: 2px solid var(--neon-blue);
     padding: 50px;
@@ -567,7 +581,7 @@ body {
     backdrop-filter: blur(15px);
 }
 
-.hacksprint-prize {
+.hackspirit-prize {
     font-size: 1.5rem;
     margin-top: 20px;
     margin-bottom: 0;
@@ -585,7 +599,7 @@ body {
     font-weight: 700;
 }
 
-.hacksprint-body p {
+.hackspirit-body p {
     font-family: var(--font-mono);
     font-size: 1.1rem;
     margin-bottom: 30px;
@@ -593,7 +607,7 @@ body {
     color: #eee;
 }
 
-.hacksprint-btn-container {
+.hackspirit-btn-container {
     margin-top: 40px;
 }
 
@@ -617,7 +631,7 @@ body {
 }
 
 /* GLITCH EFFECTS */
-.event-panel-link, .hacksprint-link, .logo-link {
+.event-panel-link, .hackspirit-link, .logo-link {
     text-decoration: none;
     color: inherit;
     display: block;
@@ -626,7 +640,7 @@ body {
 }
 
 .logo-link { display: inline-block; }
-.hacksprint-link { width: 100%; }
+.hackspirit-link { width: 100%; }
 
 .glitch, .glitch-blue { position: relative; display: inline-block; }
 .glitch::before, .glitch::after, .glitch-blue::before, .glitch-blue::after {
@@ -700,7 +714,7 @@ body {
         gap: 20px;
     }
     
-    .hacksprint-panel-large {
+    .hackspirit-panel-large {
         padding: 30px 15px;
         clip-path: none;
         border-radius: 20px;
@@ -710,10 +724,13 @@ body {
 @media (max-width: 480px) {
     .logo-text { font-size: 1.4rem; letter-spacing: 3px; }
     .hero-main-title { font-size: 2.8rem; }
+    .department-logo-img { height: 40px; }
+    .sponsor-logos-img { height: 45px; }
+    .logos-wrapper { gap: 20px; }
     .stat-box { padding: 25px 10px; }
     .stat-value { font-size: 2rem; }
     .hero-label { font-size: 0.8rem; letter-spacing: 2px; }
-    .hacksprint-prize { font-size: 1.2rem; }
+    .hackspirit-prize { font-size: 1.2rem; }
     .register-btn { width: 100%; padding: 12px 20px; }
     .social-btn { width: 50px; height: 50px; }
     .social-btns { gap: 20px; }
@@ -1002,5 +1019,35 @@ body {
         font-size: 0.55rem;
         letter-spacing: 1px;
         margin-top: 10px;
+    }
+}
+/* SPONSORED BY STRIP IN CONTACT */
+.sponsored-by-strip {
+    margin-bottom: 50px;
+    padding: 30px;
+    background: rgba(0, 5, 15, 0.4);
+    border: 1px solid rgba(181, 0, 255, 0.1);
+    border-radius: 4px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sponsored-text {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+@media (max-width: 768px) {
+    .sponsored-by-strip {
+        padding: 20px 10px;
+        margin-bottom: 30px;
+    }
+    .sponsored-text {
+        font-size: 1rem;
     }
 }
