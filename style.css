@@ -206,7 +206,7 @@ body {
 .hud-scroller {
     flex: 1;
     overflow-y: auto;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-behavior: smooth;
     z-index: 10;
     margin-top: 80px;
@@ -217,7 +217,7 @@ body {
 .hud-scroller::-webkit-scrollbar-thumb { background: var(--neon-blue-glow); }
 
 .hud-section {
-    min-height: calc(100vh - 80px);
+    min-height: 400px; /* Reduced from 100vh to allow natural flow */
     width: 100%;
     display: flex;
     align-items: center;
@@ -228,7 +228,8 @@ body {
 }
 
 #home, #overview {
-    scroll-snap-align: start; /* Enable snap only for first 2 pages */
+    scroll-snap-align: start;
+    height: calc(100vh - 80px); /* Keep first two as full-screen slides */
 }
 
 .section-label-watermark {
