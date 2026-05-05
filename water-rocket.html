@@ -156,27 +156,28 @@
             position: fixed;
             top: 100px;
             left: 5%;
-            z-index: 100;
-            background: rgba(181, 0, 255, 0.1);
+            z-index: 1000;
+            background: rgba(181, 0, 255, 0.2);
             border: 1px solid var(--neon-blue);
             color: var(--neon-blue);
-            padding: 8px 20px;
-            text-decoration: none;
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
+            width: 45px;
+            height: 45px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
             transition: all 0.3s;
-            text-transform: uppercase;
-            font-weight: bold;
+            border-radius: 4px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
         }
 
         .back-btn:hover { 
             background: var(--neon-blue);
             color: black;
-            box-shadow: 0 0 15px var(--neon-blue-glow);
-            transform: translateX(-5px);
+            box-shadow: 0 0 20px var(--neon-blue-glow);
+            transform: scale(1.1);
         }
 
         @media (max-width: 900px) {
@@ -199,7 +200,7 @@
             }
             .event-title-large { font-size: 2.2rem; }
             .prize-banner { font-size: 1rem; padding: 10px 20px; width: 100%; text-align: center; }
-            .info-panel { padding: 25px; }
+            .info-panel { background: rgba(0, 20, 40, 0.4); border: 1px solid var(--neon-blue-glow); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); padding: 40px; border-radius: 4px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); }
         }
     </style>
 </head>
@@ -223,7 +224,7 @@
         </div>
     </header>
 
-    <a href="index.html" class="back-btn">← BACK</a>
+    <a href="javascript:history.back()" class="back-btn">←</a>
 
     <main id="event-page-content">
         <section class="details-hero" id="event-hero">
@@ -237,7 +238,7 @@
                     
                     <div class="action-btns">
                         <a id="rulebook-link" class="btn-outline">RULE BOOK</a>
-                        <a href="#" class="btn-outline">REGISTER</a>
+                        <a id="register-link" href="#" target="_blank" class="btn-outline">REGISTER</a>
                     </div>
                 </div>
 
@@ -412,7 +413,8 @@
                     { name: "P Harshit Rao", phone: "9933806575" }
                 ],
                 image: "assets/robo_race.png",
-                rulebook: "assets/robo water rocket.pdf"
+                rulebook: "assets/robo water rocket.pdf",
+                registrationUrl: "https://snapmeet.co.in/event/hydro-blast-184/"
             },
             "hackathon": {
                 title: "HACKSPRINT 6.0",
@@ -465,6 +467,15 @@
                 rulebookLink.style.display = 'inline-block';
             } else {
                 rulebookLink.style.display = 'none';
+            }
+
+            // Register Link
+            const registerLink = document.getElementById('register-link');
+            if (data.registrationUrl) {
+                registerLink.href = data.registrationUrl;
+                registerLink.style.display = 'inline-block';
+            } else {
+                registerLink.style.display = 'none';
             }
 
             // Inject Rules

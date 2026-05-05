@@ -16,7 +16,8 @@ const eventsData = {
             { name: "Tejas Gowda", phone: "7337752956" }
         ],
         image: "assets/robo_race.png",
-        rulebook: "assets/robo race rule book.pdf"
+        rulebook: "assets/robo race rule book.pdf",
+        registrationUrl: "https://snapmeet.co.in/event/robo-race-2067-180/"
     },
     "robo-soccer": {
         title: "ROBO SOCCER",
@@ -53,7 +54,8 @@ const eventsData = {
             { name: "Jayanth", phone: "767662708" }
         ],
         image: "assets/robo_race.png",
-        rulebook: "assets/robo sumo rule book.pdf"
+        rulebook: "assets/robo sumo rule book.pdf",
+        registrationUrl: "https://snapmeet.co.in/event/robo-sumo-178/"
     },
     "line-follower": {
         title: "LINE FOLLOWER",
@@ -69,7 +71,8 @@ const eventsData = {
         coordinators: [
             { name: "Chiranth", phone: "9448176290" }
         ],
-        image: "assets/robo_race.png"
+        image: "assets/robo_race.png",
+        registrationUrl: "https://snapmeet.co.in/event/line-follower-182/"
     },
     "maze": {
         title: "MAZE SOLVER",
@@ -85,7 +88,8 @@ const eventsData = {
             { name: "Manoj", phone: "9035052726" }
         ],
         image: "assets/robo_race.png",
-        rulebook: "assets/NEXOVATE - Maze Solver.pdf"
+        rulebook: "assets/NEXOVATE - Maze Solver.pdf",
+        registrationUrl: "https://snapmeet.co.in/event/maze-solver-181/"
     },
     "brand-rumbling": {
         title: "RAPID BRAND RUMBLING",
@@ -101,7 +105,8 @@ const eventsData = {
             { name: "Kishan S", phone: "8296557523" }
         ],
         image: "assets/hackathon.png",
-        rulebook: "assets/robo brand rumble.pdf"
+        rulebook: "assets/robo brand rumble.pdf",
+        registrationUrl: "https://snapmeet.co.in/event/rapid-brand-rumble-185/"
     },
     "shark-tank": {
         title: "SHARK TANK",
@@ -117,7 +122,8 @@ const eventsData = {
             { name: "Saroj", phone: "8873250798" }
         ],
         image: "assets/hackathon.png",
-        rulebook: "assets/NEXOVATE - SHARK TANK RULEBOOK.pdf"
+        rulebook: "assets/NEXOVATE - SHARK TANK RULEBOOK.pdf",
+        registrationUrl: "https://snapmeet.co.in/event/shark-tank-183/"
     },
     "iq-wars": {
         title: "IQ WARS 2.0",
@@ -149,7 +155,8 @@ const eventsData = {
             { name: "P Harshit Rao", phone: "9933806575" }
         ],
         image: "assets/robo_race.png",
-        rulebook: "assets/robo water rocket.pdf"
+        rulebook: "assets/robo water rocket.pdf",
+        registrationUrl: "https://snapmeet.co.in/event/hydro-blast-184/"
     },
     "hackathon": {
         title: "HACKSPRINT 6.0",
