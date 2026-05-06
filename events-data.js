@@ -152,9 +152,9 @@ const eventsData = {
         prize: "₹10,000",
         description: "Participants design and launch water-powered rockets aiming for maximum range and target accuracy. The event introduces principles of aerodynamics, propulsion and pressure mechanics.",
         rules: [
-            "Rocket body must be made from a plastic bottle.",
+            "Rocket body must be made from a PET bottle.",
             "Propulsion is purely water and air pressure.",
-            "Launcher will be provided, or participants can bring their own."
+            "participants must bring their own launcher."
         ],
         coordinators: [
             { name: "P Harshit Rao", phone: "9933806575" },
@@ -188,3 +188,4 @@ const eventsData = {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = eventsData;
 }
+
