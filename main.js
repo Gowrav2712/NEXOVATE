@@ -22,10 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Status updates
     const cpuLoad = document.getElementById('cpu-load');
-    setInterval(() => {
-        const load = Math.floor(Math.random() * 20) + 30;
-        if (cpuLoad) cpuLoad.textContent = `CPU_LOAD: ${load}%`;
-    }, 3000);
+    if (cpuLoad) cpuLoad.textContent = 'yantrix.14.12.25';
 
     // Fade in
     document.body.style.opacity = '0';

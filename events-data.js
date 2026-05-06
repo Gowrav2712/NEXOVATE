@@ -141,10 +141,12 @@ const eventsData = {
             { name: "Kunal M K", phone: "7795687774" },
             { name: "Aishwarya S", phone: "7411260022" }
         ],
-        image: "assets/hackathon.png"
+        image: "assets/hackathon.png",
+        rulebook: "assets/IQ Wars 2.0 - Rulebook.pdf",
+        registrationUrl: "https://snapmeet.co.in/event/iq-wars-2o-187/"
     },
-    "water-rocket": {
-        title: "WATER ROCKET",
+    "hydro-blast": {
+        title: "HYDRO BLAST",
         category: "NON-TECHNICAL",
         prize: "₹10,000",
         description: "Participants design and launch water-powered rockets aiming for maximum range and target accuracy. The event introduces principles of aerodynamics, propulsion and pressure mechanics.",
@@ -158,7 +160,7 @@ const eventsData = {
             { name: "Sathwik", phone: "9606369472" }
         ],
         image: "assets/robo_race.png",
-        rulebook: "assets/robo water rocket.pdf",
+        rulebook: "assets/Hydro Blast Rulebook.pdf",
         registrationUrl: "https://snapmeet.co.in/event/hydro-blast-184/"
     },
     "hackathon": {

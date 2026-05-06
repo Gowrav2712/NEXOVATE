@@ -23,8 +23,6 @@
             align-items: center;
             justify-content: center;
             padding: 100px 5% 60px;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -239,7 +237,7 @@
                     <p class="event-desc" id="event-description">Initializing event protocol... Please wait for synchronization.</p>
                     
                     <div class="action-btns">
-                        <button class="btn-outline" onclick="alert('Downloading Rule Book...')">RULE BOOK</button>
+                        <a id="rulebook-link" class="btn-outline">RULE BOOK</a>
                         <a id="register-link" href="#" target="_blank" class="btn-outline">REGISTER</a>
                     </div>
                 </div>
@@ -265,8 +263,8 @@
 
     <footer class="hud-footer">
         <div class="footer-stats">
-            <span id="cpu-load">CPU_LOAD: 42%</span>
-            <span>UPLINK: AVJ</span>
+            <span id="cpu-load">yantrix.14.12.25</span>
+            <span>AVJ.29.01.20.06</span>
         </div>
     </footer>
 
@@ -401,10 +399,12 @@
                     { name: "Kunal M K", phone: "7795687774" },
                     { name: "Aishwarya S", phone: "7411260022" }
                 ],
-                image: "assets/hackathon.png"
+                image: "assets/hackathon.png",
+                rulebook: "assets/IQ Wars 2.0 - Rulebook.pdf",
+                registrationUrl: "https://snapmeet.co.in/event/iq-wars-2o-187/"
             },
-            "water-rocket": {
-                title: "WATER ROCKET",
+            "hydro-blast": {
+                title: "HYDRO BLAST",
                 category: "NON-TECHNICAL",
                 prize: "₹10,000",
                 description: "Participants design and launch water-powered rockets aiming for maximum range and target accuracy. The event introduces principles of aerodynamics, propulsion and pressure mechanics.",
@@ -417,7 +417,9 @@
                     { name: "P Harshit Rao", phone: "9933806575" },
                     { name: "Sathwik", phone: "9606369472" }
                 ],
-                image: "assets/robo_race.png"
+                image: "assets/robo_race.png",
+                rulebook: "assets/Hydro Blast Rulebook.pdf",
+                registrationUrl: "https://snapmeet.co.in/event/hydro-blast-184/"
             },
             "hackathon": {
                 title: "HACKSPIRIT 6.0",
@@ -462,6 +464,25 @@
             const hero = document.getElementById('event-hero');
             hero.style.backgroundImage = `url('${data.image}')`;
 
+            // Rulebook Link
+            const rulebookLink = document.getElementById('rulebook-link');
+            if (data.rulebook) {
+                rulebookLink.href = data.rulebook;
+                rulebookLink.target = "_blank";
+                rulebookLink.style.display = 'inline-flex';
+            } else {
+                rulebookLink.style.display = 'none';
+            }
+
+            // Register Link
+            const registerLink = document.getElementById('register-link');
+            if (data.registrationUrl) {
+                registerLink.href = data.registrationUrl;
+                registerLink.style.display = 'inline-flex';
+            } else {
+                registerLink.style.display = 'none';
+            }
+
             // Inject Rules
             const rulesList = document.getElementById('event-rules');
             rulesList.innerHTML = '';
@@ -487,12 +508,9 @@
                 contactsDiv.appendChild(card);
             });
 
-            // CPU Load Animation
+            // Status (Fixed)
             const cpuLoad = document.getElementById('cpu-load');
-            setInterval(() => {
-                const load = Math.floor(Math.random() * 20) + 30;
-                if (cpuLoad) cpuLoad.textContent = `CPU_LOAD: ${load}%`;
-            }, 3000);
+            if (cpuLoad) cpuLoad.textContent = 'yantrix.14.12.25';
         });
     </script>
 </body>
