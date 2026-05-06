@@ -368,7 +368,7 @@
                     { name: "Mohammed Faizan", phone: "9035458816" }
                 ],
                 image: "assets/hackathon.png",
-                rulebook: "assets/robo brand rumble.pdf",
+                rulebook: "assets/Rapid brand rumble Rulebook.pdf",
                 registrationUrl: "https://snapmeet.co.in/event/rapid-brand-rumble-185/"
             },
             "shark-tank": {
@@ -468,7 +468,7 @@
             if (data.rulebook) {
                 rulebookLink.href = data.rulebook;
                 rulebookLink.target = "_blank";
-                rulebookLink.style.display = 'inline-block';
+                rulebookLink.style.display = 'inline-flex';
             } else {
                 rulebookLink.style.display = 'none';
             }
@@ -477,7 +477,7 @@
             const registerLink = document.getElementById('register-link');
             if (data.registrationUrl) {
                 registerLink.href = data.registrationUrl;
-                registerLink.style.display = 'inline-block';
+                registerLink.style.display = 'inline-flex';
             } else {
                 registerLink.style.display = 'none';
             }
@@ -507,12 +507,9 @@
                 contactsDiv.appendChild(card);
             });
 
-            // CPU Load Animation
+            // Status (Fixed)
             const cpuLoad = document.getElementById('cpu-load');
-            setInterval(() => {
-                const load = Math.floor(Math.random() * 20) + 30;
-                if (cpuLoad) cpuLoad.textContent = `CPU_LOAD: ${load}%`;
-            }, 3000);
+            if (cpuLoad) cpuLoad.textContent = 'yantrix.14.12.25';
         });
     </script>
 </body>

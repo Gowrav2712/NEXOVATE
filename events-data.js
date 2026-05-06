@@ -72,6 +72,7 @@ const eventsData = {
             { name: "Chiranth", phone: "9448176290" }
         ],
         image: "assets/robo_race.png",
+        rulebook: "assets/Line Follower.pdf",
         registrationUrl: "https://snapmeet.co.in/event/line-follower-182/"
     },
     "maze": {
@@ -106,7 +107,7 @@ const eventsData = {
             { name: "Mohammed Faizan", phone: "9035458816" }
         ],
         image: "assets/hackathon.png",
-        rulebook: "assets/robo brand rumble.pdf",
+        rulebook: "assets/Rapid brand rumble Rulebook.pdf",
         registrationUrl: "https://snapmeet.co.in/event/rapid-brand-rumble-185/"
     },
     "shark-tank": {
@@ -178,7 +179,8 @@ const eventsData = {
             { name: "Sonal H", phone: "9591787616" },
             { name: "Ashwin S", phone: "8951728170" }
         ],
-        image: "assets/hackathon.png"
+        image: "assets/hackathon.png",
+        registrationUrl: "https://snapmeet.co.in/event/hackspirit-6-0-186/"
     }
 };
 
