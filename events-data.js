@@ -165,10 +165,10 @@ const eventsData = {
         registrationUrl: "https://snapmeet.co.in/event/hydro-blast-184/"
     },
     "hackathon": {
-        title: "HACKSPIRIT 6.0",
+        title: "HACKSPRINT 6.0",
         category: "HACKATHON",
-        prize: "₹60,000",
-        description: "HACKSPIRIT 6.0 is an intensive, multi-domain hackathon where student teams develop innovative solutions across cutting-edge fields like Artificial Intelligence, AgriTech, and the Internet of Things. The event challenges participants to submit and prototype original ideas to solve self-chosen problem statements, fostering technical creativity and practical engineering skills.",
+        prize: "₹60,000+",
+        description: "HackSprint 6.0 is India's Premier AI/ML & IoT Hackathon where student teams develop innovative solutions across cutting-edge fields like Artificial Intelligence, AgriTech, and the Internet of Things. Join 500+ innovators for a 24-hour coding marathon!",
         rules: [
             "Team size: 3-4 members.",
             "Development must happen within the 24-hour window.",
@@ -180,7 +180,7 @@ const eventsData = {
             { name: "Ashwin S", phone: "8951728170" }
         ],
         image: "assets/hackathon.png",
-        registrationUrl: "https://snapmeet.co.in/event/hackspirit-6-0-186/"
+        registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfFqr-ZQb8Ib2t7UvzclOBZCleTzV43jqR3EcDFq9u46SpSHw/viewform"
     }
 };
 

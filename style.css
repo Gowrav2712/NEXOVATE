@@ -634,6 +634,19 @@ body {
     box-shadow: 0 0 40px var(--neon-blue);
 }
 
+.register-btn.dedicated {
+    background: var(--neon-blue);
+    color: black;
+    box-shadow: 0 0 20px var(--neon-blue-glow);
+    animation: dedicated-pulse 2s infinite;
+}
+
+@keyframes dedicated-pulse {
+    0% { box-shadow: 0 0 20px var(--neon-blue-glow); transform: scale(1); }
+    50% { box-shadow: 0 0 40px var(--neon-blue); transform: scale(1.05); }
+    100% { box-shadow: 0 0 20px var(--neon-blue-glow); transform: scale(1); }
+}
+
 /* GLITCH EFFECTS */
 .event-panel-link, .hackspirit-link, .logo-link {
     text-decoration: none;

@@ -221,7 +221,7 @@
             </div>
             <nav class="nav-links">
                 <a href="index.html#technical">Events</a>
-                <a href="index.html#hackathon">Hackathon</a>
+                <a href="index.html#hackathon">HackSprint 6.0</a>
                 <a href="index.html#contact">Contact</a>
             </nav>
         </div>
@@ -242,7 +242,7 @@
                     <div class="action-btns">
                         <button id="rulebook-btn" class="btn-outline" onclick="window.open(document.getElementById('rulebook-link').href, '_blank')">RULE BOOK</button>
                         <a id="rulebook-link" href="#"></a>
-                        <a id="register-link" href="#" target="_blank" class="btn-outline">REGISTER</a>
+                        <a href="https://hacksprint6.vercel.app/" target="_blank" class="btn-outline register-btn dedicated">REGISTER</a>
                     </div>
                 </div>
 
@@ -440,10 +440,10 @@
                 registrationUrl: "https://snapmeet.co.in/event/hydro-blast-184/"
             },
             "hackathon": {
-                title: "HACKSPIRIT 6.0",
+                title: "HACKSPRINT 6.0",
                 category: "HACKATHON",
-                prize: "₹60,000",
-                description: "HACKSPIRIT 6.0 is an intensive, multi-domain hackathon where student teams develop innovative solutions according to fields like Artificial Intelligence, AgriTech, and the Internet of Things. The event challenges participants to submit and prototype original ideas to solve self-chosen problem statements, fostering technical creativity and practical engineering skills.",
+                prize: "₹60,000+",
+                description: "HackSprint 6.0 is India's Premier AI/ML & IoT Hackathon where student teams develop innovative solutions across cutting-edge fields like Artificial Intelligence, AgriTech, and the Internet of Things. Join 500+ innovators for a 24-hour coding marathon!",
                 rules: [
                     "Team size: 3-4 members.",
                     "Development must happen within the 24-hour window.",
@@ -454,7 +454,8 @@
                     { name: "Sonal H", phone: "9591787616" },
                     { name: "Ashwin S", phone: "8951728170" }
                 ],
-                image: "assets/hackathon.png"
+                image: "assets/hackathon.png",
+                registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfFqr-ZQb8Ib2t7UvzclOBZCleTzV43jqR3EcDFq9u46SpSHw/viewform"
             }
         };
 
@@ -490,6 +491,15 @@
                 li.textContent = rule;
                 rulesList.appendChild(li);
             });
+
+            // Register Link
+            const registerLink = document.getElementById('register-link');
+            if (data.registrationUrl) {
+                registerLink.href = data.registrationUrl;
+                registerLink.style.display = 'inline-flex';
+            } else {
+                registerLink.style.display = 'none';
+            }
 
             // Inject Contacts
             const contactsDiv = document.getElementById('event-contacts');
