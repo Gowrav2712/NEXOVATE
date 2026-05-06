@@ -72,7 +72,7 @@ const eventsData = {
             { name: "Chiranth", phone: "9448176290" }
         ],
         image: "assets/robo_race.png",
-        rulebook: "assets/Line Follower.pdf",
+        rulebook: "assets/NEXOVATE - Line Follower (1).pdf",
         registrationUrl: "https://snapmeet.co.in/event/line-follower-182/"
     },
     "maze": {
